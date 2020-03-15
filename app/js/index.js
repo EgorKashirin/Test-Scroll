@@ -1,4 +1,4 @@
-const slideWrapper = document.querySelector('.slide-wrapper');
+let slideWrapper = document.querySelector('.slide-wrapper');
 const nav_0 = document.querySelector('.nav__0');
 const nav_1 = document.querySelector('.nav__1');
 const nav_2 = document.querySelector('.nav__2');
@@ -44,49 +44,73 @@ window.addEventListener('touchend', e => {
     // console.log(currentSlide);
 })
 
-
-
-let sliderRange = document.querySelector("input"),
+let sliderRange = document.getElementById("input-range"),
     blockShown = document.querySelector("output"),
     section1998 = document.getElementById("year1998"),
     section2009 = document.getElementById("year2009"),
     section2016 = document.getElementById("year2016");
+let div = document.getElementById('test');
+div.style.width = Number(sliderRange.value) + 'px';
+// div.style.width = Number(sliderRange.value) + 'px';
 
 sliderRange.addEventListener(
     "input",
     () => {
-        console.log(sliderRange.value)
-        if (sliderRange.value <= "166") {
-            document.getElementById("year1998").style.transition = '2s'
-            document.getElementById("year2009").style.transition = '2s'
-            document.getElementById("year2016").style.transition = '2s'
+        div.style.width = Number(sliderRange.value) + 'px';
+        if (sliderRange.value <= 304) {
+            section1998.style.transition = '1s'
+            section2009.style.transition = '1s'
+            section2016.style.transition = '1s'
             section1998.style.marginLeft = "50px"
             section1998.style.opacity = "1"
             section2009.style.marginLeft = "1050px"
             section2009.style.opacity = "0"
             section2016.style.marginLeft = "2050px"
             section2016.style.opacity = "0"
-        } else if (sliderRange.value <= "232") {
-            document.getElementById("year1998").style.transition = '2s'
-            document.getElementById("year2009").style.transition = '2s'
-            document.getElementById("year2016").style.transition = '2s'
+        } else if (sliderRange.value <= 600) {
+            section1998.style.transition = '1s'
+            section2009.style.transition = '1s'
+            section2016.style.transition = '1s'
             section1998.style.marginLeft = "-1000px"
             section1998.style.opacity = "0"
             section2009.style.marginLeft = "50px"
             section2009.style.opacity = "1"
             section2016.style.marginLeft = "1050px"
             section2016.style.opacity = "0"
-        } else if (sliderRange.value <= "300") {
-            document.getElementById("year1998").style.transition = '2s'
-            document.getElementById("year2009").style.transition = '2s'
-            document.getElementById("year2016").style.transition = '2s'
+        } else if (sliderRange.value <= 800) {
+            section1998.style.transition = '1s'
+            section2009.style.transition = '1s'
+            section2016.style.transition = '1s'
             section1998.style.marginLeft = "-2000px"
             section1998.style.opacity = "0"
             section2009.style.marginLeft = "-1000px"
             section2009.style.opacity = "0"
             section2016.style.marginLeft = "50px"
             section2016.style.opacity = "1"
+        } else if (sliderRange.value <= "100") {
+            sliderRange.value = 100;
         }
     },
     false
+);
+
+
+
+sliderRange.addEventListener(
+    "touchend",
+    () => {
+        div.style.width = Number(sliderRange.value) + 'px';
+        if (sliderRange.value <= 304) {
+            sliderRange.value = 55;
+            div.style.width = Number(sliderRange.value) + 'px';
+            // sliderRange.value = 55;
+            div.style.width = Number(sliderRange.value) + 'px';
+        } else if (sliderRange.value <= 600) {
+            sliderRange.value = 427;
+            div.style.width = Number(sliderRange.value) + 'px';
+        } else if (sliderRange.value <= 800) {
+            sliderRange.value = 800;
+            div.style.width = Number(sliderRange.value) + 'px';
+        }
+    }
 );

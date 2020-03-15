@@ -3,16 +3,6 @@
 @import "libs"
 
 @font-face
-  font-family: GothamPro
-  src: url('../fonts/GothamPro.eot')
-  src: local(GothamPro), url('fonts/GothamPro.ttf')
-
-@font-face
-  font-family: GothamProLight
-  src: url('../fonts/GothamProLight.ttf') format("opentype")
-  src: local(GothamProLight), url('fonts/GothamProLight.ttf')
-
-@font-face
   font-family: LatoRegular
   src: url('../fonts/LatoRegular.ttf') format("opentype")
   src: local(LatoRegular), url('fonts/LatoRegular.ttf')
@@ -277,10 +267,16 @@ input[type='range']
 	margin-left: 110px
 	margin-top: 20px
 	padding: 5px
-	background-color: #d1eaff
+	background-color: #9fa0a1
 	top: 670px
+	transition-duration: .2s
+	// overflow: hidden
+	// position: relative
 
 	&::-webkit-slider-thumb
+		// transition-duration: 5s
+		position: relative
+		transition: transform .2s ease-in-out
 		-webkit-appearance: none
 		cursor: ew-resize
 		width: 40px
@@ -289,5 +285,17 @@ input[type='range']
 		background-repeated: no-repeat
 		background-size: 40px 60px
 		margin-left: 10px
+		position: relative
+		z-index: 3
+
+#test
+	margin-left: 110px
+	margin-top: -18px
+	height: 4px
+	padding: 5px
+	position: relative
+	// width: 20px
+	background: #fff
+	z-index: 2
 
 @import "media" // Always at the end
